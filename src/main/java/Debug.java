@@ -12,7 +12,7 @@ import java.util.stream.IntStream;
 
 public class Debug{
     public static void main(String[] args) {
-        String file = "heart-statlog";
+        String file = "iris2Classes";
         InputStream dataSetStream = Application.class.getClassLoader().getResourceAsStream(file + ".arff");
 
         if(dataSetStream != null) {

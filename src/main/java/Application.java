@@ -57,8 +57,6 @@ public class Application {
         return barycentre;
     }
 
-
-
     public static double[] startRelief(Instances instances){
         return relief(instances, instances.numInstances(), 5, false);
     }
@@ -187,11 +185,11 @@ public class Application {
                 Integer[] indices = IntStream.range(0, weights.length-1).boxed().toArray(Integer[]::new);
                 Arrays.sort(indices, Comparator.<Integer>comparingDouble(i -> weights[i]).reversed());
 
-                int[] indicesToKeep = new int[p];
+                int[] indicesToKeep = new int[p+1];
                 for(int i = 0; i < p-1; i++){
                     indicesToKeep[i] = indices[i];
                 }
-                indicesToKeep[p-1] = weights.length-1;
+                indicesToKeep[p] = weights.length-1;
                 Arrays.sort(indicesToKeep);
 
                 System.out.println("Fichier: " + file);
