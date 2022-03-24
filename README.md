@@ -2,7 +2,7 @@
 
 
 Pour lancer le projet:<br>
-``java -jar Relief {nom_fichier} [nombre_iteration]``
+``java -jar Relief.jar {nom_fichier} [nombre_iteration]``
 
 Version de java: 1.8
 
