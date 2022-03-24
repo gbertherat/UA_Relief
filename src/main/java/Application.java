@@ -1,9 +1,10 @@
-import weka.classifiers.Evaluation;
 import weka.classifiers.lazy.IBk;
-import weka.core.*;
+import weka.core.EuclideanDistance;
+import weka.core.Instance;
+import weka.core.Instances;
+import weka.core.NormalizableDistance;
 import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.Normalize;
-import weka.filters.unsupervised.attribute.Remove;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -63,11 +64,11 @@ public class Application {
     }
 
     public  static double[] startRelief(Instances instances, int m){
-        return relief(instances, m, 5,m > instances.numInstances());
+        return relief(instances, m, 5,m != instances.numInstances());
     }
 
     public static double[] startRelief(Instances instances, int m, int k){
-        return relief(instances, m, k,m > instances.numInstances());
+        return relief(instances, m, k,m != instances.numInstances());
     }
 
     public static double[] relief(Instances instances, int m, int k, boolean useRandom){

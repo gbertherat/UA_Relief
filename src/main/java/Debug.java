@@ -1,21 +1,18 @@
-import weka.classifiers.Evaluation;
 import weka.classifiers.lazy.IBk;
 import weka.core.Instances;
 import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.Normalize;
-import weka.filters.unsupervised.attribute.Remove;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.Random;
 import java.util.stream.IntStream;
 
 public class Debug{
     public static void main(String[] args) {
-        String file = "iris2Classes";
+        String file = "heart-statlog";
         InputStream dataSetStream = Application.class.getClassLoader().getResourceAsStream(file + ".arff");
 
         if(dataSetStream != null) {
@@ -31,7 +28,7 @@ public class Debug{
                 normalize.setInputFormat(dataSetInstances);
                 dataSetInstances = Filter.useFilter(dataSetInstances, normalize);
 
-                int p = (int) ((2/(float) 4) * dataSetInstances.numAttributes());
+                int p = (int) ((2/(float) 3) * dataSetInstances.numAttributes());
 
                 double[] weights = Application.startRelief(dataSetInstances, 10, 5);
 
