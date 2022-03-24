@@ -196,7 +196,7 @@ public class Application {
                 System.out.println("Nombre d'instances: " + dataSetInstances.numInstances());
                 System.out.println("Nombre d'itérations de relief: " + (args.length >= 2 ? (Integer.parseInt(args[1]) > dataSetInstances.numInstances() ? dataSetInstances.numInstances() : args[1]) : dataSetInstances.numInstances()));
                 System.out.println("Nombre de k plus proche voisins (barycentre): " + (args.length >= 2 ? (Integer.parseInt(args[2]) > dataSetInstances.numInstances() ? dataSetInstances.numInstances() : args[2]) : dataSetInstances.numInstances()));
-                System.out.println("Nombre d'attributs avant relief: " + indices.length);
+                System.out.println("Nombre d'attributs avant relief: " + dataSetInstances.numAttributes());
                 System.out.println("Nombre d'attributs après relief: " + indicesToKeep.length);
                 System.out.println("\n--------\n");
 
